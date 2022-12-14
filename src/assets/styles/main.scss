@@ -1,0 +1,31 @@
+@import "variables";
+
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1320px;
+    margin: 0 auto;
+    @media screen and (max-width: $laptop) {
+        width: 1140px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 960px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 720px;
+    }
+
+    @media screen and (max-width: $mobileSmall) {
+        width: 540px;
+    }
+}
