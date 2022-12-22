@@ -1,153 +1,141 @@
 <template>
-    <div class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="header__top__left">
-                    <router-link to="/">Главная</router-link>
-                    <router-link to="/about">О нас</router-link>
-                    <router-link to="/contact">Контакты</router-link>
-                </div>
-
-            <div class="header__top__right">
-                <div class="header__top__right-item">
-                    <img :src="require('@/assets/icons/phone.png')" />
-                    8 (964) 89 99 119
-                </div>
-                <div class="header__top__right-item">
-                    <img :src="require('@/assets/icons/delivery-icon.png')" />
-                    Доставка
-                </div>
-            </div>
-            </div>
-            
+  <div class="header">
+    <div class="header__top">
+      <div class="container">
+        <div class="header__top__left">
+          <router-link to="/">Главная</router-link>
+          <router-link to="/about">О нас</router-link>
+          <router-link to="/contact">Контакты</router-link>
         </div>
-
-        <div class="header__middle container">
-            <img :src="require('@/assets/icons/LOGO.png')"/> 
-
-            <div class="header__middle-search">
-                <img :src="require('@/assets/icons/search.png')"/> 
-                <input type="text" placeholder="Поиск" />
-            </div>
-            
-            <div class="header__middle-icons">
-                <img :src="require('@/assets/icons/wishlist.png')"/> 
-                <img :src="require('@/assets/icons/bag.png')"/> 
-                <img :src="require('@/assets/icons/profile.png')"/> 
-            </div>
-
+        <div class="header__top__right">
+          <div class="header__top__right-item">
+            <img :src="require('@/assets/icons/phone.png')" />
+            8 (964) 89 99 119
+          </div>
+          <div class="header__top__right-item">
+            <img :src="require('@/assets/icons/delivery-icon.png')" />
+            Доставка
+          </div>
         </div>
-
-        <div class="header__low container">
-            <ButtonIcon :image="'kitchen'" :text="'Кухни'" :size="16"/>
-            <ButtonIcon :image="'bedroom'" :text="'Спальни'" :size="16"/>
-            <ButtonIcon :image="'livingroom'" :text="'Гостинные'" :size="16"/>
-            <ButtonIcon :image="'closet'" :text="'Прихожие'" :size="16"/>
-            <ButtonIcon :image="'office'" :text="'Офисная мебель'" :size="16"/>
-            <ButtonIcon :image="'childrensroom'" :text="'Детская'" :size="16"/>
-            <div class="header__low-stock">
-                Акция
-            </div>
-
-            <div>
-                    :
-            </div>
-
-        </div>
-
+      </div>
     </div>
+    <div class="header__middle container">
+      <img :src="require('@/assets/icons/LOGO.png')" />
+      <div class="header__middle-search">
+        <img :src="require('@/assets/icons/search.png')" />
+        <input type="text" placeholder="Поиск" />
+      </div>
+      <div class="header__middle-icons">
+        <img :src="require('@/assets/icons/wishlist.png')" />
+        <img :src="require('@/assets/icons/bag.png')" />
+        <router-link to="/profile"
+          ><img :src="require('@/assets/icons/profile.png')"
+        /></router-link>
+      </div>
+    </div>
+    <div class="header__low container">
+      <ButtonIcon :image="'kitchen'" :text="'Кухни'" :size="16" />
+      <ButtonIcon :image="'bedroom'" :text="'Спальни'" :size="16" />
+      <ButtonIcon :image="'livingroom'" :text="'Гостинные'" :size="16" />
+      <ButtonIcon :image="'closet'" :text="'Прихожие'" :size="16" />
+      <ButtonIcon :image="'office'" :text="'Офисная мебель'" :size="16" />
+      <ButtonIcon :image="'childrensroom'" :text="'Детская'" :size="16" />
+      <div class="header__low-stock">Акция</div>
+      <div>:</div>
+    </div>
+  </div>
 </template>
 
 <script>
-import ButtonIcon from '../UI/ButtonIcon.vue';
+import ButtonIcon from "../UI/ButtonIcon.vue";
 
 export default {
-    components: { ButtonIcon }
-}
+  components: { ButtonIcon },
+};
 </script>
 
 <style lang="scss" scoped>
 
 .header {
-    display: flex;
-    flex-direction: column;
-    &__top {
-        padding: 10px 0px;
-        background: #313131;
+  display: flex;
+  flex-direction: column;
+  &__top {
+    padding: 10px 0px;
+    background: #313131;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__left {
+      display: flex;
+      gap: 30px;
+      a {
         font-weight: 400;
         font-size: 14px;
-        color: #FFFFFF;
-        .container{
-            display: flex;
-            justify-content: space-between;
-        }
-
-        &__left {
-            display: flex;
-            gap: 30px;
-            a {
-                font-weight: 400;
-                font-size: 14px;
-                color: #FFFFFF;
-            }
-        }
-
-        &__right {
-            display: flex;
-            gap: 30px;
-
-            &-item {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-        }
+        color: #ffffff;
+      }
     }
 
-    &__middle {
+    &__right {
+      display: flex;
+      gap: 30px;
+
+      &-item {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        gap: 37px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        gap: 10px;
+      }
+    }
+  }
 
-        &-search {
-            border: 1px solid #E6E6E6;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 17px 15px;
-            input {
-                outline: none;
-                border: none;
-                width: 100%;
-            }
-        } 
+  &__middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 37px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-        &-icons {
-            display: flex;
-            gap: 30px;
-            width: 115px;
-            height: 18px;
-        }
+    &-search {
+      border: 1px solid #e6e6e6;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 17px 15px;
+      input {
+        outline: none;
+        border: none;
+        width: 100%;
+      }
     }
 
-    &__low {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 400;
-        font-size: 16px;
-        padding: 23px 40px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
-
-        &-stock {
-            color: #D74444;
-            font-weight: 400;
-            font-size: 16px;
-        }
+    &-icons {
+      display: flex;
+      gap: 30px;
+      width: 115px;
+      height: 18px;
     }
+  }
+
+  &__low {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 23px 40px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+
+    &-stock {
+      color: #d74444;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
 }
 </style>

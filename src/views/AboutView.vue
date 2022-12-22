@@ -265,7 +265,7 @@ export default {
     &__part1 {
         display: flex;
         flex-wrap: nowrap;
-        background: linear-gradient(to right, white 75%, #D7E8ED 25%);
+        background: linear-gradient(to right, white 65%, #D7E8ED 25%);
         background-position: right;
         max-height: 450px;
 
