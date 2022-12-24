@@ -18,19 +18,8 @@
       <div class="home__block2__name">
         Хиты продаж
       </div>
-
       <div class="home__block2__card">
-          <ProductCard :image="'Prod1'" text="Валенсия Beige"/>
-          <ProductCard :image="'Prod2'" text="Толикс-2 White Gloss"/>
-          <ProductCard :image="'Prod3'" text="Динс Velvet Yellow"/>
-          <ProductCard :image="'Prod4'" text="Кускен Navy Blue"/>
-          <ProductCard :image="'Prod5'" text="Шерона Barhat Grey"/>
-          <ProductCard :image="'Prod6'" text="Авиньон-1"/>
-          <ProductCard :image="'Prod7'" text="Стелла Дуб Сонома"/>
-          <ProductCard :image="'Prod8'" text="Равенна-1 Light"/>
-          <ProductCard :image="'Prod9'" text="Бенфлит Grey"/>
-          <ProductCard :image="'Prod10'" text="Тиффани Вудлайн Крем"/>
-          
+          <ProductCard v-for="(item, i) in tovar" :key="i" :product="item" />
       </div>
 
     </div>
@@ -40,9 +29,15 @@
 
 <script>
 import ProductCard from "@/components/UI/ProductCard.vue";
+import products from "@/data/products.json"
 
 export default {
   name: "HomeView",
+  data() {
+    return {
+      tovar: products.elements,
+    }
+  },
   components: { ProductCard },
 };
 </script>
@@ -51,10 +46,12 @@ export default {
 
 .home {
   &__block1 {
-    background-image: url('@/assets/images/1785.png');
+    background: url('@/assets/images/1785.jpg') no-repeat bottom;
+    background-size: cover;
+    margin-top: 30px;
     box-shadow: 0px 5px 11px 2px rgba(255, 255, 255, 0.09);
     align-items: center;
-     width: 1140px; 
+     width: 100%; 
      height: 450px;
      &__p1 {
       text-transform: uppercase;
@@ -85,13 +82,17 @@ export default {
       &__name {
         font-weight: 400;
         font-size: 16px;
-        margin: 30px 0 35px 0;
+        margin: 30px 0 50px 0;
       }
 
       &__card {
         display: flex;
         flex-wrap: wrap;
-        max-width: 950px;
+        column-gap: 5.3%;
+        row-gap: 40px;
+        position: relative;
+        justify-content: space-between;
+        margin-bottom: 10px;
       }
 
   }

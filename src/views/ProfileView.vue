@@ -211,18 +211,23 @@ export default {
 
     &__left {
       padding-bottom:250px ;
+      position: relative;
     }
 
-    &__send {
+    &__send input{
       background: #245462;
       width: 101px;
       color: white;
       border: none;
-      padding: 15px;
+      padding: 12px 20px 13px 20px;
       outline: none;
       text-align: center;
       margin-top: 20px;
-      
+      position: absolute;
+      right: 110px;
+      &:hover {
+        cursor: pointer;
+      }
 
     }
 

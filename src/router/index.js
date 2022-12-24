@@ -22,6 +22,12 @@ const routes = [
     name: "ProfileView",
     component: () => import("../views/ProfileView.vue"),
   },
+
+  {
+    path: "/basket",
+    name: "BasketView",
+    component: () => import("../views/BasketView.vue")
+  }
 ];
 
 const router = createRouter({

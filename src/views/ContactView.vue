@@ -24,8 +24,16 @@
           <label for="letter">Сообщение</label>
           <textarea name="" id="letter" cols="500" rows="8"></textarea>
           <br />
-          <input class="file1" type="file"/>
-          <input class="submit" type="submit" />
+
+          <div class="sumbitS"><div class="submit1">
+            <button>Отправить</button>
+          </div>
+          <div class="file1" >
+          <button >Прикрепить файл</button>
+          </div>
+          
+        </div>
+
         </div>
 
         <div class="contact__block1__p3-s2">
@@ -87,6 +95,12 @@ export default {
       display: flex;
       margin-top: 30px;
 
+      .sumbitS{
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        flex-direction: row-reverse;
+      }
       &__s1 {
         &-g1 {
           display: flex;
@@ -97,6 +111,8 @@ export default {
           }
         }
         margin-right: 99px;
+
+        
       }
 
       &__s1 label {
@@ -104,6 +120,7 @@ export default {
         font-weight: 400;
         font-size: 12px;
         color: #969696;
+        
 
       }
 
@@ -120,23 +137,33 @@ export default {
         }
         textarea {
           width: 431px;
+          resize: none;
         }
 
-        .file1 {
+        .file1 button{
+          outline: none !important;
+          border: none;
+          padding: 12px 20px 13px 20px;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+          background: white;
           font-weight: 400;
           font-size: 13px;
-          width: 116px;
-          outline: none;
-          border: none;
-          background: #fcfcfc;
-          
+
+          &:hover {
+            cursor: pointer;
+          }
         }
 
-        .submit {
+        .submit1 button{
+          outline: none;
           background: #245462;
           color: white;
+          padding: 12px 20px 13px 20px;
+          font-weight: 400;
           font-size: 13px;
-          width: 106px;
+          color: white;
+          border: none;
+
           &:hover {
             cursor: pointer;
           }
@@ -151,6 +178,7 @@ export default {
         gap: 37px;
         max-width: 365px;
         max-height: 55px;
+        margin: 15px;
       }
     }
   }

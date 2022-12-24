@@ -20,14 +20,14 @@
       </div>
     </div>
     <div class="header__middle container">
-      <img :src="require('@/assets/icons/LOGO.png')" />
+      <router-link to="/"><img :src="require('@/assets/icons/LOGO.png')" /></router-link>
       <div class="header__middle-search">
         <img :src="require('@/assets/icons/search.png')" />
         <input type="text" placeholder="Поиск" />
       </div>
       <div class="header__middle-icons">
         <img :src="require('@/assets/icons/wishlist.png')" />
-        <img :src="require('@/assets/icons/bag.png')" />
+        <RouterLink to="/basket"><img :src="require('@/assets/icons/bag.png')" /></RouterLink>
         <router-link to="/profile"
           ><img :src="require('@/assets/icons/profile.png')"
         /></router-link>
@@ -124,12 +124,13 @@ export default {
 
   &__low {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-around;
     font-weight: 400;
     font-size: 16px;
-    padding: 23px 40px;
+    padding: 23px 0 23px 0;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+    column-gap: 5px;
 
     &-stock {
       color: #d74444;

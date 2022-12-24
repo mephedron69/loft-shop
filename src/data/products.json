@@ -1,0 +1,182 @@
+{
+    "elements": [
+        {
+            "id": 1,
+            "name": "Валенсия Beige",
+            "image": "Prod1",
+            "icon": "listlike",
+            "desc": "Барные стулья",
+            "price": "2 300₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 2,
+            "name": "Толикс-2 White Gloss",
+            "image": "Prod2",
+            "icon": "listlike",
+            "desc": "Барные стулья",
+            "price": "4 690₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 3,
+            "name": "Динс Velvet Yellow",
+            "image": "Prod3",
+            "icon": "listlike",
+            "desc": "Диваны",
+            "price": "28 490₽",
+            "priceN": "37 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 4,
+            "name": "Кускен Navy Blue",
+            "image": "Prod4",
+            "icon": "listlike",
+            "desc": "Диваны",
+            "price": "2 300₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77",
+            "color": "Темно-синий"
+        },
+        {
+            "id": 5,
+            "name": "Шерона Barhat Grey",
+            "image": "Prod5",
+            "icon": "listlike",
+            "desc": "Двухспальные кровати",
+            "price": "21 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 6,
+            "name": "Авиньон-1",
+            "image": "Prod6",
+            "icon": "listlike",
+            "desc": "Буфеты",
+            "price": "18 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 7,
+            "name": "Стелла Дуб Сонома",
+            "image": "Prod7",
+            "icon": "listlike",
+            "desc": "Комоды",
+            "price": "8 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 8,
+            "name": "Равенна-1 Light",
+            "image": "Prod8",
+            "icon": "listlike",
+            "desc": "Комоды",
+            "price": "14 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 9,
+            "name": "Бенфлит Grey",
+            "image": "Prod9",
+            "icon": "listlike",
+            "desc": "Журнальные столы",
+            "price": "7 290₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 10,
+            "name": "Тиффани Вудлайн Крем",
+            "image": "Prod10",
+            "icon": "listlike",
+            "desc": "Письменные столы",
+            "price": "10 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 11,
+            "name": "Валенсия Beige",
+            "image": "Prod11",
+            "icon": "listlike",
+            "desc": "Шкафы",
+            "price": "19 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 12,
+            "name": "Лайт-3-170-240 Белый",
+            "image": "Prod12",
+            "icon": "listlike",
+            "desc": "Шкафы",
+            "price": "27 290₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 13,
+            "name": "Вилли Pink",
+            "image": "Prod13",
+            "icon": "listlike",
+            "desc": "Детский диван",
+            "price": "21 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 14,
+            "name": "Сан-Паулу Velvet Brown",
+            "image": "Prod14",
+            "icon": "listlike",
+            "desc": "Барные стулья",
+            "price": "25 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 15,
+            "name": "Валенсия Beige",
+            "image": "Prod15",
+            "icon": "listlike",
+            "desc": "Барные стулья",
+            "price": "10 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        },
+        {
+            "id": 16,
+            "name": "Валенсия Beige",
+            "image": "Prod16",
+            "icon": "listlike",
+            "desc": "Барные стулья",
+            "price": "19 990₽",
+            "size1": "43",
+            "size2": "43",
+            "size3": "77"
+        }
+    ]
+}
