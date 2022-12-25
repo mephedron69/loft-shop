@@ -26,7 +26,7 @@
         <input type="text" placeholder="Поиск" />
       </div>
       <div class="header__middle-icons">
-        <img :src="require('@/assets/icons/wishlist.png')" />
+        <router-link to="/favour"><img :src="require('@/assets/icons/wishlist.png')" /></router-link>
         <RouterLink to="/basket"><img :src="require('@/assets/icons/bag.png')" /></RouterLink>
         <router-link to="/profile"
           ><img :src="require('@/assets/icons/profile.png')"

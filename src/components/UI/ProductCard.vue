@@ -1,7 +1,15 @@
 <template>
     <div class="product" v-if="product">
     <div class="proCard">
-        <img class="icon" :src="require('@/assets/icons/'+ product.icon +'.png')" /> 
+
+        <button 
+         class="proCard__button1" 
+         @click="addToCart">
+         <img class="icon"  src="@/assets/icons/listlike.png" alt="">
+      </button>
+
+
+
         <img class="img" :src="require('@/assets/images/'+ product.image +'.png')" /> 
         <p class="text1" >  {{ product.name }}  </p>     
         <p class="text2" >  {{ product.desc }}  </p>   
@@ -59,6 +67,15 @@ export default {
     position: absolute;
     overflow: hidden;
     background: white;
+
+    &__button1 {
+        position: absolute;
+        right: 15.5px;
+        top: 21px;
+        border: none;
+        background: white;
+        cursor: pointer;
+    }
     .bask {
         display: none;
     }
@@ -101,13 +118,7 @@ export default {
 
         }
     }
-    .icon{
-        position: absolute;
-        right: 15.5px;
-        top: 21px;
-        max-height: 15px;
-        max-width: 17.5px;
-    }
+    
     .img {
         object-fit: contain;
         margin: 54px 12px;

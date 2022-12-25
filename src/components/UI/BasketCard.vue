@@ -49,13 +49,11 @@ export default {
         flex-direction: column;
         gap: 20px;
         margin-left: 40px;
-        
         &-part1 {
             display: flex;
             font-weight: 500;
             font-size: 16px;
             justify-content: space-between;
-            max-width: 1000px;
         }
         &__part2 {
             display: flex;

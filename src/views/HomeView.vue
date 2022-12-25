@@ -88,10 +88,9 @@ export default {
       &__card {
         display: flex;
         flex-wrap: wrap;
-        column-gap: 5.3%;
+        column-gap: 4.3%;
         row-gap: 40px;
         position: relative;
-        justify-content: space-between;
         margin-bottom: 10px;
       }
 
