@@ -26,7 +26,14 @@
         <input type="text" placeholder="Поиск" />
       </div>
       <div class="header__middle-icons">
-        <router-link to="/favour"><img :src="require('@/assets/icons/wishlist.png')" /></router-link>
+
+        <router-link 
+          class="basketlist"
+          :class="{active: status }"
+          to="/favour">
+              <img :src="require('@/assets/icons/wishlist.png')" />
+        </router-link>
+
         <RouterLink to="/basket"><img :src="require('@/assets/icons/bag.png')" /></RouterLink>
         <router-link to="/profile"
           ><img :src="require('@/assets/icons/profile.png')"
@@ -36,7 +43,7 @@
     <div class="header__low container">
       <ButtonIcon :image="'kitchen'" :text="'Кухни'" :size="16" />
       <ButtonIcon :image="'bedroom'" :text="'Спальни'" :size="16" />
-      <ButtonIcon :image="'livingroom'" :text="'Гостинные'" :size="16" />
+      <router-link to="/living"><ButtonIcon :image="'livingroom'" :text="'Гостинные'" :size="16" /></router-link>
       <ButtonIcon :image="'closet'" :text="'Прихожие'" :size="16" />
       <ButtonIcon :image="'office'" :text="'Офисная мебель'" :size="16" />
       <ButtonIcon :image="'childrensroom'" :text="'Детская'" :size="16" />
@@ -50,7 +57,14 @@
 import ButtonIcon from "../UI/ButtonIcon.vue";
 
 export default {
+  name: 'Header',
   components: { ButtonIcon },
+  data() {
+        return {
+            status: false
+        }
+  },
+    
 };
 </script>
 
@@ -119,6 +133,13 @@ export default {
       gap: 30px;
       width: 115px;
       height: 18px;
+
+      .basketlist {
+        &.active{
+          background: url('@/assets/icons/listlikeB.png') no-repeat bottom;
+        }
+      }
+
     }
   }
 
@@ -131,6 +152,11 @@ export default {
     padding: 23px 0 23px 0;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
     column-gap: 5px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
 
     &-stock {
       color: #d74444;

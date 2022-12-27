@@ -5,10 +5,13 @@
         /
         <router-link to="/favour">Избранное</router-link>
       </div>
-      <div class="favour__part2">Ваше Избранное</div>
-      <div class="favour__part3"> 
-        Избранные товары
-      </div>
+      <div class="favour__part4">
+            <div class="favour__part4__p1">
+                Ваше Избранное</div>
+            <div class="favour__part4__p2">
+                <ProductCard v-for="(item, i) in favourites" :key="i" :product="item" />
+            </div>
+        </div>
       <div class="favour__part4">
             <div class="favour__part4__p1">
                 Вам может понравиться</div>
@@ -28,10 +31,14 @@ import products from "@/data/products.json";
 export default {
     name: 'FavourView',
     data() {
-    return {
-      tovar: products.elements,
-    }
-  },
+        return {
+            tovar: products.elements,
+            favourites: []
+        }
+    },
+    mounted() {
+        this.favourites = JSON.parse(localStorage.getItem('favourites'))
+    },
     components: {
         ProductCard
     },
@@ -65,7 +72,7 @@ export default {
             font-size: 16px;
             color: #414141;
             margin-bottom: 20px;
-            margin-top: 100px;
+            margin-top: 40px;
         }
         &__p2 {
             display: flex;

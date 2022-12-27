@@ -12,12 +12,11 @@
                 <div> X предмета</div>
             </div>
             <div class="basket__block2__p2"> 
-                <BasketCard :product="tovar[3]" />
-                <BasketCard :product="tovar[6]" />
+                <BasketCard v-for="(item, i) in baskets" :key="i" :product="item" />
             </div>
             <div class="basket__block2__p3">
                 <div class="basket__block2__p3-sum">
-                    Итоговая стоимость: X
+                    Итоговая стоимость: X 
                 </div>
                 <div class="basket__block2__p3-cout">
                   <button>Оформить заказ</button>
@@ -46,9 +45,13 @@ export default {
     name: "BasketView",
     data() {
     return {
-      tovar: products.elements,
+        tovar: products.elements,
+        baskets: []
     }
-  },
+    },
+   mounted() {
+        this.baskets = JSON.parse(localStorage.getItem('baskets'))
+    },
     components: {
         ProductCard,
         BasketCard
@@ -74,8 +77,6 @@ export default {
             font-weight: 400;
             font-size: 16px;
         }
-        &__p2 {
-        }
         &__p3 {
             display: flex;
             align-items: center;
@@ -91,6 +92,7 @@ export default {
                 background: #245462;
                 color: white;
                 margin-left: 25px;
+                
             }
         }
     }

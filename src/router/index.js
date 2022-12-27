@@ -32,6 +32,11 @@ const routes = [
     path: "/favour",
     name: "FavourView",
     component: () => import("../views/FavourView.vue")
+  },
+  {
+    path: "/living",
+    name: "LivingView",
+    component: () => import("../views/LivingView.vue")
   }
 ];
 
