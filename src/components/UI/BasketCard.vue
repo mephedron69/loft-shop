@@ -8,7 +8,7 @@
                         <p> {{ product.name }}</p>
                     </div>       
                     <div> 
-                        <p> {{ product.price }} </p>
+                        <p> {{ product.count*product.price }} ₽ </p>
                     </div>
                 </div>
                 <div class="basket__card__top__part2">
@@ -30,9 +30,9 @@
                     <div class="basket__card__top__part2-p2">
                         <p>Количество:</p>
                         <p>
-                            <span  @click="decrementItem(product.id)">-</span>
-                            {{ product.counter }}
-                            <span  @click="incrementItem(product.id)">+</span>
+                            <span @click = "minusCounter(product)">-</span>
+                            {{ product.count }}
+                            <span @click = "plusCounter(product)">+</span>
                         </p>
                     </div>
                 </div>
@@ -40,55 +40,53 @@
         </div>
         <div class="basket__right">
             <button
-            @click="removeBaskets(product)">
+            @click = "addBasket(product)">
                 X   
             </button>
         </div>
     </div>
 </template>
 <script>
+
 export default {
     name: "BasketCard",
     props: ['product'],
     data() {
         return {
-            quantity: 1,
         }
+    },
+    mounted() {
+        
+    },
+    computed: {
+        
     },
 
     methods: {
-        removeBaskets(product) {
-            var getBaskets = JSON.parse(localStorage.getItem('baskets'))
-            if (getBaskets.some(object => object.id === product.id)) {
-                getBaskets.map((item, index) => {
-                    item.id === product.id ? getBaskets.splice(index, 1) : null
-                })
-            } else {
-                null
-            }
-            localStorage.setItem('baskets', JSON.stringify(getBaskets))
+        addBasket(product) {
+            var getBasket = JSON.parse(localStorage.getItem('basket'))
+            const result = getBasket.filter(object => object.id !== product.id)
+            localStorage.setItem('basket', JSON.stringify(result))
         },
-        
-        decrementItem(id) {
-            var getBaskets = JSON.parse(localStorage.getItem('baskets'))
-            if (getBaskets.some(object => object.id === id)) {
-                getBaskets.map((item, index) => {
-                    if (item.id === id && getBaskets[index].counter > 1) {
-                        getBaskets[index].counter -= 1
-                    }
-                })
-            }
-            localStorage.setItem('baskets', JSON.stringify(getBaskets))
+
+        plusCounter(product) {
+            var getCounter = JSON.parse(localStorage.getItem('basket'))
+            const index = getCounter.findIndex(object => object.id === product.id);
+            getCounter[index].count++
+
+            
+            localStorage.setItem('basket', JSON.stringify(getCounter))
         },
-        incrementItem(id) {
-            var getBaskets = JSON.parse(localStorage.getItem('baskets'))
-            if (getBaskets.some(object => object.id === id)) {
-                getBaskets.map((item, index) => {
-                    item.id === id ? getBaskets[index].counter += 1 : null
-                })
+
+        minusCounter(product) {
+            var getCounter = JSON.parse(localStorage.getItem('basket'))
+            const index = getCounter.findIndex(object => object.id === product.id);
+            if (getCounter[index].count > 1) {
+                getCounter[index].count--
             }
-            localStorage.setItem('baskets', JSON.stringify(getBaskets))
-      }
+            
+            localStorage.setItem('basket', JSON.stringify(getCounter))
+        },
         
     }
 }
@@ -123,6 +121,7 @@ export default {
                 justify-content: space-between;
             }
             &__part2 {
+                justify-content: space-between;
                 display: flex;
                 gap: 530px;
                 align-items: center;

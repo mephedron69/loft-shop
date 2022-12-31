@@ -6,10 +6,10 @@
             "image": "Prod1",
             "icon": "listlike",
             "desc": "Барные стулья",
-            "price": "2 300₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 2300,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 2,
@@ -17,10 +17,10 @@
             "image": "Prod2",
             "icon": "listlike",
             "desc": "Барные стулья",
-            "price": "4 690₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 4690,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 3,
@@ -28,11 +28,11 @@
             "image": "Prod3",
             "icon": "listlike",
             "desc": "Диваны",
-            "price": "28 490₽",
-            "priceN": "37 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 28490,
+            "priceN": 37990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 4,
@@ -40,10 +40,10 @@
             "image": "Prod4",
             "icon": "listlike",
             "desc": "Диваны",
-            "price": "2 300₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77",
+            "price": 2300,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77,
             "color": "Темно-синий"
         },
         {
@@ -52,10 +52,10 @@
             "image": "Prod5",
             "icon": "listlike",
             "desc": "Двухспальные кровати",
-            "price": "21 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 21990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 6,
@@ -63,10 +63,10 @@
             "image": "Prod6",
             "icon": "listlike",
             "desc": "Буфеты",
-            "price": "18 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 18990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 7,
@@ -74,10 +74,10 @@
             "image": "Prod7",
             "icon": "listlike",
             "desc": "Комоды",
-            "price": "8 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 8990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 8,
@@ -85,10 +85,10 @@
             "image": "Prod8",
             "icon": "listlike",
             "desc": "Комоды",
-            "price": "14 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 4990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 9,
@@ -96,10 +96,10 @@
             "image": "Prod9",
             "icon": "listlike",
             "desc": "Журнальные столы",
-            "price": "7 290₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 7290,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 10,
@@ -107,10 +107,10 @@
             "image": "Prod10",
             "icon": "listlike",
             "desc": "Письменные столы",
-            "price": "10 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 10990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 11,
@@ -118,10 +118,10 @@
             "image": "Prod11",
             "icon": "listlike",
             "desc": "Шкафы",
-            "price": "19 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 19990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 12,
@@ -129,10 +129,10 @@
             "image": "Prod12",
             "icon": "listlike",
             "desc": "Шкафы",
-            "price": "27 290₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 27290,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 13,
@@ -140,10 +140,10 @@
             "image": "Prod13",
             "icon": "listlike",
             "desc": "Детский диван",
-            "price": "21 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 21990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 14,
@@ -151,10 +151,10 @@
             "image": "Prod14",
             "icon": "listlike",
             "desc": "Барные стулья",
-            "price": "25 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 25990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 15,
@@ -162,10 +162,10 @@
             "image": "Prod15",
             "icon": "listlike",
             "desc": "Барные стулья",
-            "price": "10 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 10990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         },
         {
             "id": 16,
@@ -173,10 +173,10 @@
             "image": "Prod16",
             "icon": "listlike",
             "desc": "Барные стулья",
-            "price": "19 990₽",
-            "size1": "43",
-            "size2": "43",
-            "size3": "77"
+            "price": 19990,
+            "size1": 43,
+            "size2": 43,
+            "size3": 77
         }
     ]
 }

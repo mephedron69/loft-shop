@@ -9,18 +9,18 @@
         <div class="basket__block2">
             <div class="basket__block2__p1">
                 <div> Ваша Корзина</div>
-                <div> X предмета</div>
+                <div> {{ basketLength }} предмета</div>
             </div>
             <div class="basket__block2__p2"> 
-                <BasketCard v-for="(item, i) in baskets" :key="i" :product="item" />
+                <BasketCard v-for="(item, i) in basket" :key="i" :product="item" />
             </div>
             <div class="basket__block2__p3">
                 <div class="basket__block2__p3-sum">
-                    Итоговая стоимость: X 
+                    Итоговая стоимость: {{ totalCard }} ₽
                 </div>
                 <div class="basket__block2__p3-cout">
-                  <button>Оформить заказ</button>
-                </div>
+                  <button>Оформить заказ</button>   
+                </div>  
             </div>
         </div>
 
@@ -46,11 +46,33 @@ export default {
     data() {
     return {
         tovar: products.elements,
-        baskets: []
+        basket: []
     }
     },
-   mounted() {
-        this.baskets = JSON.parse(localStorage.getItem('baskets'))
+    mounted() {
+    console.log(this.products);
+       this.basket = JSON.parse(localStorage.getItem('basket'))
+
+       
+       
+    },
+    computed: {
+        totalCard() {
+            let result = 0
+
+            for (let item of this.basket) {
+                result = result+(item.price * item.count)
+            }
+            return result;
+        },
+        basketLength() {
+            let result = 0
+
+            for (let item of this.basket) {
+                result = result+(item.count)
+            }
+            return result;
+        }
     },
     components: {
         ProductCard,

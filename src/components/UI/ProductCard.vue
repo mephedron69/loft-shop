@@ -2,11 +2,11 @@
     <div class="product" v-if="product">
     <div class="proCard">
         <button 
-         class="proCard__button1"
-         :class="{active: status }"
-         @click="addToFavourites(product)"
+        class="proCard__button1"
+        :class = "{active: status}"
+        @click = "addFavour(product)"
         >
-         <span>
+            <span>
             <svg
             width="20"
             height="20"
@@ -31,16 +31,14 @@
             </defs>
             </svg>
         </span>
-      </button>
-
-
+        </button>
 
         <img class="img" :src="require('@/assets/images/'+ product.image +'.png')" /> 
         <p class="text1" >  {{ product.name }}  </p>     
         <p class="text2" >  {{ product.desc }}  </p>   
         <div class="p"> 
-           <p class="p__text3" >  {{ product.price }}   </p>
-           <p class="p__text4" >  {{ product.priceN }}  </p>
+           <p class="p__text3" >  {{ product.price }} ₽   </p>
+           <p class="p__text4" >  {{ product.priceN }} ₽  </p>
         </div>
         <div class="bask"> 
             <div class="bask-size">
@@ -64,9 +62,8 @@
             </div>
             <div class="bask-buy">
                 <button
-                    :class="{activeButton: statusButton }"
-                    @click="addToBasket(product)"
-                    
+                :class = "{activeButton: statusBasket}"
+                @click = "addBasket(product)"
                     >
                 </button>
             </div>
@@ -82,60 +79,58 @@ export default {
     data() {
         return {
             status: false,
-            statusButton: false
+            statusBasket: false
         }
     },
     props: ['product'],
     mounted() {
-        var getFavourites = JSON.parse(localStorage.getItem('favourites'))
-        getFavourites.some(object => object.id === this.product.id) ? this.status = true : this.status = false
+        var getFavour = JSON.parse(localStorage.getItem('favourites')) || []
+        getFavour.findIndex(object => object.id === this.product.id) < 0 ? this.status = false : this.status = true
 
-        var getBaskets = JSON.parse(localStorage.getItem('baskets'))
-        getBaskets.some(object => object.id === this.product.id) ? this.statusButton = true : this.statusButton = false
+        var getBasket = JSON.parse(localStorage.getItem('basket')) || []
+        getBasket.findIndex(object => object.id === this.product.id) < 0 ? this.statusBasket = false : this.statusBasket = true
     },
+    
     methods: {
-        addToFavourites(product) {
-            var getFavourites = JSON.parse(localStorage.getItem('favourites'))
-            if (getFavourites) {
-                if (getFavourites.some(object => object.id === product.id)) {
-                    getFavourites.map((item, index) => {
-                        item.id === product.id ? getFavourites.splice(index, 1) : null
-                    })
-                    this.status = false
-                } else {
-                    getFavourites.push(product)
+        addFavour(product) {
+            var getFavour = JSON.parse(localStorage.getItem('favourites'))
+            if (getFavour) {
+                const result = getFavour.findIndex(object => object.id === product.id);
+                if (result < 0) {
+                    getFavour.push(product)
                     this.status = true
+                }  
+                else { 
+                    getFavour.splice(result, 1)
+                    this.status = false
                 }
-                localStorage.setItem('favourites', JSON.stringify(getFavourites))
+                localStorage.setItem('favourites', JSON.stringify(getFavour))
             }
             else {
                 localStorage.setItem('favourites', JSON.stringify([product]))
-                this.status = true
+                 this.status = true
             }
         },
-
-        addToBasket(product) {
-            product.counter = 1
-            var getBaskets = JSON.parse(localStorage.getItem('baskets'))
-             if (getBaskets) {
-                    if (getBaskets.some(object => object.id === product.id)) {
-                    getBaskets.map((item, index) => {
-                        item.id === product.id ? getBaskets.splice(index, 1) : null
-                    })
-                    this.statusButton = false
+        addBasket(product) {
+            product.count = 1
+            var getBasket = JSON.parse(localStorage.getItem('basket'))
+            if (getBasket) {
+                const result = getBasket.findIndex(object => object.id === product.id);
+                if (result < 0) {
+                    getBasket.push(product)
+                    this.statusBasket = true
                 }
                 else {
-                        getBaskets.push(product)
-                         this.statusButton = true
-                }   
-                localStorage.setItem('baskets', JSON.stringify(getBaskets))
-             }
-             else {
-                 localStorage.setItem('baskets', JSON.stringify([product]))
-                this.statusButton = true
-             }
-        },
-
+                    getBasket.splice(result, 1)
+                    this.statusBasket = false
+                }
+                localStorage.setItem('basket', JSON.stringify(getBasket))
+            }
+            else {
+                localStorage.setItem('basket', JSON.stringify([product]))
+                this.statusBasket = true
+            }
+        }
     }
 }
 </script>
@@ -160,13 +155,9 @@ export default {
         right: 15.5px;
         top: 21px;
         border: none;
-        background: white;
+        background: rgb(255, 255, 255);
         cursor: pointer;
         svg {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            transition: all 0.5s ease 0s;
             &:hover {
                 path {
                     fill: #d81921;
@@ -181,6 +172,7 @@ export default {
                 }
             }
             }
+
     }
     .bask {
         display: none;
@@ -223,27 +215,31 @@ export default {
                 margin-top: 17px;
                 cursor: pointer;
                 &:after {
-                    content: 'Добавить в корзину';
+                    content: "Добавить в корзину";
                 }
                 &:hover {
                     background: #2a6172;
+                     color:white;
                 }
-                &.activeButton {
-                    background: white;
-                    border: 1px solid #245462;
-                    color: #245462;
-                    &:after {
-                        content: 'Удалить из корзины';
-                    }         
-                    &:hover {
-                        background: #2a6172;
-                        color: white;
-                    }           
-                }
-            }
-            &-buy {
-            }
 
+                &.activeButton {
+                    background-color: white;;
+                    box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.11);
+                        color: black;
+                    &:after {
+                        content: "Удалить с корзины";
+                        border: 1px solid black;
+                        border: 1px;
+                        
+                    }
+                    &:hover {
+                     background: #2a6172;
+                     color:white;
+                }
+                    
+                }
+            }
+            
         }
     }
     
