@@ -34,10 +34,15 @@ const routes = [
     component: () => import("../views/FavourView.vue")
   },
   {
-    path: "/living",
-    name: "LivingView",
-    component: () => import("../views/LivingView.vue")
-  }
+    path: "/catalog/:slug",
+    name: "CatalogView",
+    component: () => import("../views/CatalogView.vue")
+  },
+  {
+    path: "/bed",
+    name: "BedView",
+    component: () => import("../views/BedView.vue")
+  },
 ];
 
 const router = createRouter({

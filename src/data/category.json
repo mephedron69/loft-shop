@@ -1,0 +1,76 @@
+{
+    "category": [
+        {
+            "id": 0,
+            "title": "Кухня",
+            "icon": "kitchen",
+            "link": "kitchen",
+            "subcategory": [
+                {
+                    "id": 0,
+                    "title": "Кресло",
+                    "subcategory": [
+                        {
+                            "id": 0,
+                            "title": "Мягкие"
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "title": "Столы",
+                    "subcategory": [
+                        {
+                            "id": 0,
+                            "title": "Металические"
+                        },
+                        {
+                            "id": 1,
+                            "title": "Деревянные"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Гарнитуры"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "Спальни",
+            "icon": "bedroom",
+            "link": "bedroom"
+        },
+        {
+            "id": 2,
+            "title": "Гостинные",
+            "icon": "livingroom",
+            "link": "livingroom"
+        },
+        {
+            "id": 3,
+            "title": "Прихожие",
+            "icon": "closet",
+            "link": "closet"
+        },
+        {
+            "id": 4,
+            "title": "Офисная мебель",
+            "icon": "office",
+            "link": "office"
+        },
+        {
+            "id": 5,
+            "title": "Детская",
+            "icon": "childrensroom",
+            "link": "childrensroom"
+        },
+        {
+            "id": 6,
+            "title": "Акция",
+            "icon": "childrensroom",
+            "link": "stock"
+        }
+    ]
+}

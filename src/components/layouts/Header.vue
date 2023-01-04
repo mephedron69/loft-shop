@@ -41,30 +41,61 @@
       </div>
     </div>
     <div class="header__low container">
-      <ButtonIcon :image="'kitchen'" :text="'Кухни'" :size="16" />
-      <ButtonIcon :image="'bedroom'" :text="'Спальни'" :size="16" />
-      <router-link to="/living"><ButtonIcon :image="'livingroom'" :text="'Гостинные'" :size="16" /></router-link>
+      <router-link v-for="(item, i) in category" :key="i" :to="'/catalog/'+ item.link"><ButtonIcon :image="item.icon" :text="item.title" :size="16" /></router-link>
+      <!-- <ButtonIcon :image="'bedroom'" :text="'Спальни'" :size="16" />
+      <router-link to="/catalog/living"><ButtonIcon :image="'livingroom'" :text="'Гостинные'" :size="16" /></router-link>
       <ButtonIcon :image="'closet'" :text="'Прихожие'" :size="16" />
       <ButtonIcon :image="'office'" :text="'Офисная мебель'" :size="16" />
-      <ButtonIcon :image="'childrensroom'" :text="'Детская'" :size="16" />
+      <router-link to="/bed"><ButtonIcon :image="'childrensroom'" :text="'Детская'" :size="16" /></router-link>
       <div class="header__low-stock">Акция</div>
-      <div>:</div>
+      <div>:</div> -->
     </div>
   </div>
 </template>
 
 <script>
 import ButtonIcon from "../UI/ButtonIcon.vue";
+import category from "@/data/category.json"
 
 export default {
   name: 'Header',
-  components: { ButtonIcon },
+  components: { ButtonIcon,},
   data() {
-        return {
-            status: false
-        }
+    return {
+      status: false,
+      sum1: 5,
+      sum2: 10,
+      category: category.category
+    }
   },
-    
+  props: ['product'],
+  created() {
+    // при создание компоненте (недоступна DOM-дерево)
+  },
+  mounted() {
+    // при загрузке компонента
+  },
+  methods: {
+    // набор функции
+    countEr() {
+      this.sum1++
+    },
+    testFunction() {
+      // Определенная логика
+    }
+  },
+  computed: {
+    // Вычисляемые свойства и слежение
+    totalSum() {
+      return this.sum1 + this.sum2
+    }
+  },
+  watch: {
+    // отследить состояние определенных данных
+    totalSum() {
+      console.log('counter');
+    }
+  }    
 };
 </script>
 

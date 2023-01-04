@@ -1,19 +1,51 @@
 <template>
   <div class="home container">
-   <div class="home__block1">
-       <div class="home__block1__p1" >
-        loft мебель 
-        <swiper-slide />
-        
-      </div>
-      <div class="home__block1__p2">
-        Современная и удобная мебель в Анапе
-      </div>
-      <div class="home__block1__p3">
-        СМОТРЕТЬ КАТАЛОГ
-      </div>
+    <div class="home__block1"> 
+      <swiper
+        :slides-per-view="1"
+        :space-between="0"
+        autoplay="true"
+        @swiper="onSwiper"
+        @slideChange="onSlideChange"
+        :navigation="{
+      prevEl: prev,
+      nextEl: next,
+    }"
+      >
+        <swiper-slide>
+          <div class="home__block1">
+            <div class="home__block1__p1" >
+              loft мебель 
+              
+            </div>
+            <div class="home__block1__p2">
+              Современная и удобная мебель в Анапе
+            </div>
+            <div class="home__block1__p3">
+              СМОТРЕТЬ КАТАЛОГ
+            </div>
+            <img src="@/assets/images/1785.jpg" />
+          </div>         
+        </swiper-slide>
+        <swiper-slide>
+          <div class="home__block1">
+            <div class="home__block1__p1" >
+              loft мебель 
+              
+            </div>
+            <div class="home__block1__p2">
+              Современная и удобная мебель в Анапе
+            </div>
+            <div class="home__block1__p3">
+              СМОТРЕТЬ КАТАЛОГ
+            </div>
+            <img src="@/assets/images/1785.jpg" />
+          </div>
+        </swiper-slide>
+        <div ref="prev" class="swiper-button-prev"></div>
+        <div ref="next" class="swiper-button-next"></div>
+      </swiper>
     </div>
-
     <div class="home__block2">
       <div class="home__block2__name">
         Хиты продаж
@@ -21,24 +53,49 @@
       <div class="home__block2__card">
           <ProductCard v-for="(item, i) in tovar" :key="i" :product="item" />
       </div>
-
     </div>
-    </div>
-
+  </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 import ProductCard from "@/components/UI/ProductCard.vue";
 import products from "@/data/products.json"
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore, { Navigation } from "swiper";
+SwiperCore.use([Navigation]);
+
+import "swiper/swiper.min.css";
+import "swiper/components/navigation/navigation.min.css";
+
 
 export default {
   name: "HomeView",
   data() {
     return {
       tovar: products.elements,
+      
     }
   },
-  components: { ProductCard },
+  
+  setup() {
+    const prev = ref(null);
+    const next = ref(null);
+    const onSwiper = (swiper) => {
+        console.log(swiper);
+    };
+    const onSlideChange = () => {
+        console.log('slide change');
+    };
+    return {
+        onSwiper,
+        onSlideChange,
+        prev,
+        next,
+    };
+  },
+  components: { ProductCard,Swiper,
+        SwiperSlide, },
 };
 </script>
 
@@ -46,13 +103,21 @@ export default {
 
 .home {
   &__block1 {
-    background: url('@/assets/images/1785.jpg') no-repeat bottom;
+    position: relative;
     background-size: cover;
-    margin-top: 30px;
     box-shadow: 0px 5px 11px 2px rgba(255, 255, 255, 0.09);
     align-items: center;
      width: 100%; 
      height: 450px;
+     img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: -1;
+     }
      &__p1 {
       text-transform: uppercase;
       font-weight: 700;

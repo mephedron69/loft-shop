@@ -29,3 +29,74 @@ a {
         width: 540px;
     }
 }
+.simple-range-slider-popover, .simple-range-slider-popover-arrow {
+    display: none !important;
+}
+.simple-range-slider-bg-bar {
+    margin: 0 !important;
+}
+.simple-range-slider-bar {
+    background: #245462 !important;
+}
+.swiper-button-prev {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    background-image: url("@/assets/icons/leftLight.svg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 25px;
+    top: 47%;
+    z-index: 1;
+}
+
+.swiper-button-next {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    background-image: url("@/assets/icons/rightstok.svg") !important;
+        background-repeat: no-repeat;
+        background-position: center;
+    right: 25px;
+    top: 44%;
+    z-index: 1;
+}
+
+.swiper-button-disabled {
+    background: rgba(157, 157, 157, 0.28);
+    // background-image: url("@/assets/icons/leftstok.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.swiper-button-prev2 {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("@/assets/icons/leftstok1.png") !important;
+    background-repeat: no-repeat;
+        background-position: center;
+
+    left: 0px;
+    top: 5px;
+    z-index: 1;
+}
+.swiper-button-next2 {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("@/assets/icons/rightstok.svg") !important;   
+    background-repeat: no-repeat;
+        background-position: center;
+
+    right: 0px;
+    top: 5px;
+    z-index: 1;
+}
+.swiper-wrapper {
+    align-items: center;
+}
